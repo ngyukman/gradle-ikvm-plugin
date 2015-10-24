@@ -88,6 +88,9 @@ More options:
         // Warning codes that should be considered as errors
         warnAsError = [105, 110, 120]
 
+        // Array of reference paths to be referenced in compilation
+        references = [ '../foo.dll', '../bar.dll' ]
+
         // Other ikvmc options can be set:
         // fileVersion, target, main, classloader, delaySign, compressResources, removeAssertions, srcPath ...
     }

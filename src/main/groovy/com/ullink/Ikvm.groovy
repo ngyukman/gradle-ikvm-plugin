@@ -22,6 +22,7 @@ class Ikvm extends ConventionTask {
     String version
     String fileVersion
     def srcPath
+    def references = []
     boolean removeAssertions = true
     boolean compressResources = true
     boolean generateDoc = false
@@ -111,11 +112,10 @@ class Ikvm extends ConventionTask {
         return [getIkvmc()]
     }
 
-    
     @InputFiles
     def getReferences() {
-        project.configurations.findByName(getCompileConfigurationName()).collect()
-    } 
+        project.configurations.findByName(getCompileConfigurationName()).collect() + references
+    }
     
     @InputFiles
     def getKeyFileObj() {
